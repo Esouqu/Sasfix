@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { IPublication } from '$lib/interfaces';
 	import ReactionGroup from './ReactionGroup.svelte';
 	import Tag from './Tag.svelte';
@@ -18,7 +19,7 @@
 	<div class="publication-footer">
 		<ReactionGroup likes={reactions.likes} dislikes={reactions.dislikes} />
 		{#if !withoutCommentsLink}
-			<a href="/{id}" class="text-caption" aria-label="Comments">Open comments</a>
+			<a href="{base}/{id}" class="text-caption" aria-label="Comments">Open comments</a>
 		{/if}
 		<span class="text-caption" style="color: #C8C8C8;">Today</span>
 		<div class="publication-tags">
